@@ -1,5 +1,5 @@
 import "./App.styles.scss";
-import Homapage from "./homepage.component";
+import Homapage from "./pages/homepage.component.jsx";
 
 function App() {
   return (
