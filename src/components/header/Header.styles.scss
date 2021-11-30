@@ -1,0 +1,32 @@
+.header {
+  height: 7rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  .logo {
+    display: flex;
+    width: 7rem;
+    align-items: center;
+  }
+
+  & .nav {
+    width: 50%;
+    display: flex;
+    align-items: center;
+
+    &__items {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+    }
+    &__item {
+      padding: 1rem 2.5rem;
+      .nav__link {
+        text-decoration: none;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
