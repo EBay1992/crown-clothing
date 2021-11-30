@@ -1,10 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Homapage from "./pages/homepage.component.jsx";
-
-const HatPage = () => {
-  return <div>hats</div>;
-};
+import Homapage from "./pages/home/homepage.component.jsx";
+import Shoppage from "./pages/shop/shoppage.component";
 
 const App = (props) => {
   console.log(props);
@@ -12,7 +9,7 @@ const App = (props) => {
     <div>
       <Routes>
         <Route path="/" element={<Homapage />} />
-        <Route path="/hats" element={<HatPage />} />
+        <Route path="/shop" element={<Shoppage />} />
       </Routes>
     </div>
   );

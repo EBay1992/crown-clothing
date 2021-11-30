@@ -1,0 +1,10 @@
+.shop-page {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 2.5rem;
+    margin: 3rem 0rem;
+  }
+}
