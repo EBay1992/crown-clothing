@@ -23,6 +23,11 @@ const Header = () => {
               Contant
             </Link>
           </li>
+          <li className="nav__item">
+            <Link className="nav__link" to="/signin">
+              Sing In
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
