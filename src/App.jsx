@@ -6,17 +6,26 @@ import Homapage from "./pages/home/homepage.component.jsx";
 import Shoppage from "./pages/shop/shoppage.component";
 import SingInAndSingUp from "./pages/sing-In-And-sing-up/SingInAndSingUp";
 
-import { auth } from "./firebase/firebase.utility";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utility";
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      setCurrentUser(user);
+    auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        userRef.onSnapshot((snapshot) => {
+          setCurrentUser({ id: snapshot.id, ...snapshot.data() });
+        });
+        console.log(currentUser);
+      } else {
+        setCurrentUser(null);
+      }
     });
-    console.log(auth.currentUser);
-  }, [currentUser]);
+  }, []);
+
+  console.log(currentUser);
 
   return (
     <div>

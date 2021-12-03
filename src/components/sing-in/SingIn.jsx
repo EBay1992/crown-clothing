@@ -4,6 +4,7 @@ import CustomButton from "../Button/CustomButton";
 import FormInput from "../Input/FormInput";
 import "./SingIn.styles.scss";
 import { signInWithGoogle } from "../../firebase/firebase.utility";
+
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
