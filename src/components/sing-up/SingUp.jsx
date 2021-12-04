@@ -22,13 +22,13 @@ const SingUp = () => {
     }
 
     try {
-      console.log("email", email);
-      console.log("password", password);
-      const user = await auth.createUserWithEmailAndPassword(email, password);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
 
-      console.log(user);
+      await createUserProfileDocument(user, { displayName }); //* Distructure the property right away!
 
-      await createUserProfileDocument(user, { displayName });
       setDisplayName("");
       setEmail("");
       setPassword("");
