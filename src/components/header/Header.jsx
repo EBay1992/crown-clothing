@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utility";
 
-const Header = ({ currentUser }) => {
+import { useSelector } from "react-redux";
+import store from "../../redux/store";
+
+const Header = () => {
+  const currentUser = useSelector((state = store) => state.user.currentUser);
+
   return (
     <div className="header">
       <div className="logo">
